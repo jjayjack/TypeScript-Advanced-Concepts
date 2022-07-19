@@ -96,7 +96,18 @@ moveAnimal({ species: "bird", flyingSpeed: 35 });
 // Type Casting
 const paragraph = document.querySelector("p");
 const paragraphID = document.getElementById("message-output");
-const userInput1 = <HTMLInputElement>document.getElementById("user-input1")!;
-const userInput2 = document.getElementById("user-input2")! as HTMLInputElement;
-userInput1.value = "Hi there!";
-userInput2.value = "Welcome!";
+const userInput = <HTMLInputElement>document.getElementById("user-input")!;
+// const userInput2 = document.getElementById("user-input2")! as HTMLInputElement;
+if (userInput) {
+  (userInput as HTMLInputElement).value = "Hi there!";
+}
+// Index Properties
+interface ErrorContainer {
+  //create object {email: "not a valid email", username: "must start with a character"}
+  // id: string;
+  [property: string]: string;
+}
+const errorBag: ErrorContainer = {
+  email: "Not a valid email",
+  username: "Must start with a capital character",
+};
