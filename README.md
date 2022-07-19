@@ -15,3 +15,9 @@ Feature that allows you to override set limitations on data items.
 
 Index Types
 Within an interface, strings, numbers, or symbols can be used as property name for key value pair value `[prop: number]: string;`. Once key value pair is set within interface, no other datatypes can be used
+
+## Function Overloads
+
+Define function structure BEFORE function
+`function add(a: number, b: number):number`
+`function add(a:Combinable, b: Combinable){return a + b}`

@@ -15,17 +15,17 @@ const e1: ElevatedEmployee = {
   startDate: new Date(),
 };
 
-type Combinable = string | number;
-type Numeric = number | boolean;
-type Universal = Combinable & Numeric;
+// type Combinable = string | number;
+// type Numeric = number | boolean;
+// type Universal = Combinable & Numeric;
 
-// Type Guards - typeof!
-function add(a: Combinable, b: Combinable) {
-  if (typeof a === "string" || typeof b === "string") {
-    return a.toString() + b.toString();
-  }
-  return a + b;
-}
+// // Type Guards - typeof!
+// function add(a: Combinable, b: Combinable) {
+//   if (typeof a === "string" || typeof b === "string") {
+//     return a.toString() + b.toString();
+//   }
+//   return a + b;
+// }
 
 // Type Guards - if in!
 type UnknownEmployee = Employee | Admin;
@@ -39,7 +39,7 @@ function printEmployeeInfo(emp: UnknownEmployee) {
   }
 }
 
-printEmployeeInfo({ name: "Manuel", startDate: new Date() });
+// printEmployeeInfo({ name: "Manuel", startDate: new Date() });
 
 class Car {
   drive() {
@@ -66,8 +66,8 @@ function useVehicle(vehicle: Vehicle) {
     vehicle.loadCargo(10000);
   }
 }
-useVehicle(v1);
-useVehicle(v2);
+// useVehicle(v1);
+// useVehicle(v2);
 
 interface Bird {
   species: "bird";
@@ -91,7 +91,7 @@ function moveAnimal(animal: Animal) {
   console.log("Moving at the speed of " + speed);
 }
 
-moveAnimal({ species: "bird", flyingSpeed: 35 });
+// moveAnimal({ species: "bird", flyingSpeed: 35 });
 
 // Type Casting
 const paragraph = document.querySelector("p");
@@ -111,3 +111,19 @@ const errorBag: ErrorContainer = {
   email: "Not a valid email",
   username: "Must start with a capital character",
 };
+// Function Overloads
+type Combinable = string | number;
+type Numeric = number | boolean;
+type Universal = Combinable & Numeric;
+
+function add(a: number, b: number): number;
+function add(a: string, b: string): string;
+function add(a: Combinable, b: Combinable) {
+  if (typeof a === "string" || typeof b === "string") {
+    return a.toString() + b.toString();
+  }
+  return a + b;
+}
+const sum = add(1, 5);
+const result = add("Max", "Thomas");
+result.split(" ");
