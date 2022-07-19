@@ -21,3 +21,6 @@ Within an interface, strings, numbers, or symbols can be used as property name f
 Define function structure BEFORE function
 `function add(a: number, b: number):number`
 `function add(a:Combinable, b: Combinable){return a + b}`
+
+##Optional Chaining
+Helps target nested items in object data and if item before question mark is not available will not cause runtime error based on TS 3+

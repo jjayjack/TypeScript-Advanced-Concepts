@@ -127,3 +127,11 @@ function add(a: Combinable, b: Combinable) {
 const sum = add(1, 5);
 const result = add("Max", "Thomas");
 result.split(" ");
+
+// Optional Chaining
+const fetchedUserData = {
+  id: "ul",
+  name: "Jocelyn",
+  job: { title: "CEO", description: "My own company" },
+};
+console.log(fetchedUserData?.job?.title);
