@@ -96,10 +96,10 @@ function moveAnimal(animal: Animal) {
 // Type Casting
 const paragraph = document.querySelector("p");
 const paragraphID = document.getElementById("message-output");
-const userInput = <HTMLInputElement>document.getElementById("user-input")!;
+const userInput1 = <HTMLInputElement>document.getElementById("user-input")!;
 // const userInput2 = document.getElementById("user-input2")! as HTMLInputElement;
-if (userInput) {
-  (userInput as HTMLInputElement).value = "Hi there!";
+if (userInput1) {
+  (userInput1 as HTMLInputElement).value = "Hi there!";
 }
 // Index Properties
 interface ErrorContainer {
@@ -135,3 +135,6 @@ const fetchedUserData = {
   job: { title: "CEO", description: "My own company" },
 };
 console.log(fetchedUserData?.job?.title);
+const userInput = undefined;
+const storedData = userInput ?? "DEFAULT";
+console.log(storedData);
